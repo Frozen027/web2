@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>武汉旅游信息网</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/body.css">
+    <link rel="stylesheet" type="text/css" id="link" href="css/banner.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+</head>
+<style type="text/css">
+    #logo img {
+        margin-top: 5px;
+    }
+
+    .head-search {
+        width: 302px;
+    }
+
+    .search-box {
+        width: 210px;
+    }
+
+    #search-form {
+        margin-right: 52px;
+    }
+
+    #jm-menu {
+        margin-bottom: 0
+    }
+
+    #back-to-top {
+        right: 20px;
+        bottom: 20px;
+        z-index: 100;
+        padding: 15px;
+        border-radius: 5px;
+        position: fixed;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        color: white;
+        background-color: #51a142;
+        display: none;
+    }
+
+    #back-to-top:hover {
+        background-color: #51a142;
+    }
+</style>
+
+<body>
+<div id="jm-topbar">
+    <div class="topbar-box">
+        <div class="topbar-left fl">
+            <form method="POST" id="loginBox">
+                <label>账号
+                    <input type="text" id="inputId" name="re_yx" placeholder="ID/邮箱">
+                </label>
+                <label>密码
+                    <input type="password" id="inputPass" name="re_mm">
+                </label>
+                <button type="submit" onclick="login()">登录</button>
+                <a class="top-reg" href="#">新用户注册</a>
+                <a class="top-pas" href="#">忘记密码？</a>
+            </form>
+        </div>
+        <div class="topbar-right fr">
+            <a href="#">本站资讯</a>
+            <a href="#">关于我们</a>
+            <a href="#"><strong>联系我们</strong></a>
+        </div>
+    </div>
+</div>
+
+<div id="jm-head">
+    <div class="head-box">
+        <div id="logo">
+            <a href="#" title="logo">
+                <img src="images/xxlogo.png" alt="logo" title="logo" class="fl">
+            </a>
+        </div>
+
+        <div class="fr">
+            <form action="/" method="get" id="search-form">
+                <div class="head-search fl">
+                    <input type="text" id="InputSearch" name="search" placeholder=" &nbsp; 请输入查询关键词">
+                </div>
+                <button class="ajax-submit fl" type="submit">查询</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="jm-menu">
+    <div class="menu-box">
+        <ul>
+            <li class="active"><a href="#">网站首页</a></li>
+            <li><a href="#">酒店预订</a></li>
+            <li><a href="#">跟团游/自由行</a></li>
+            <li><a href="#">机票/火车票</a></li>
+            <li><a href="#">游玩攻略</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="jm-banner">
+    <div class="banner-box">
+    </div>
+</div>
+
+<div id="jm-main">
+    <div class="data-layout">
+        <div class="data-box">
+            <span class="ml46">游客眼中的武汉 <strong>10年</strong></span>
+            <span>发表 <strong id="numbers0"></strong> +篇游记分享</span>
+            <span>共上传 <strong id="numbers1"></strong> +张精彩照片</span>
+            <span class="qq-group">武汉本地人——热心导游群：<a href="#">123456789</a></span>
+        </div>
+    </div>
+    <div style="width: 1000px;margin: 0 auto;margin-top: 20px;">
+        <a href="#"><img src="images/act.png" style="display: block"></a>
+    </div>
+
+    <div class="ykj-layout infor-layout">
+        <div class="ykj-left fl">
+            <div class="infor-title">
+                <i class="icon"></i>
+                <div class="items">
+                    <a href="#" class="current">旅游知识</a>
+                </div>
+                <a class="more" href="/zx/bk/">更多>></a>
+            </div>
+            <div class="infor-box">
+                <div class="infor-content" style="display:block;">
+                    <div class="newest">
+                        <a href="/zx/9562.html" title="如何跟团游？">
+                            <img src="images/gt.jpg" alt="如何跟团游？">
+                            <h3><span class="fr">2020-06-09</span>带你了解，如何跟团游玩？</h3>
+                            <p>跟团游是什么样的呢？可能很多人对跟团游还不了解，说简单就是跟着旅行团游玩，那么很多人就疑问了，旅行团的优势是什么呢？</p>
+                        </a>
+                    </div>
+                    <ul class="infor-list">
+                        <li><i></i><a href="#">追求潮流，快来首尔钟路吧!</a><span>2020-06-09</span></li>
+                        <li><i></i><a href="#">流行与复古结合的热门人气地</a><span>2020-06-08</span></li>
+                        <li><i></i><a href="#">特别的旅行，美味的餐食...</a><span>2020-06-05</span></li>
+                        <li><i></i><a href="#">这次冬季旅行就去釜山吧!</a><span>2020-06-05</span></li>
+                        <li><i></i><a href="#">这次冬季旅行就去釜山吧?</a><span>2020-05-30</span></li>
+                        <li><i></i><a href="#">最受国人欢迎的伦敦酒店</a><span>2020-05-26</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ykj-right fr">
+            <div class="infor-title">
+                <i class="icon"></i>
+                <div class="items">
+                    <a href="#" class="current">旅游新闻</a>
+                </div>
+                <a class="more" href="#">更多>></a>
+            </div>
+            <div class="infor-box">
+                <div class="infor-content" style="display:block;">
+
+                    <div class="newest">
+                        <a href="/zx/9575.html" title="摆摊了！武汉市民带您一起逛遍江城！">
+                            <img src="images/bt.png" alt="摆摊了！武汉市民带您一起逛遍江城！">
+                            <h3><span class="fr">2020-6-6</span>摆摊了！武汉市民带您一起逛遍江城！</h3>
+                            <p>
+                                昨晚戴威大佬在武汉街头摆摊的消息，再次让整个旅游圈为之欢欣鼓舞。为什么要摆摊?因为两会后被总理亲自点赞的“地摊经济”一下子就火了，支付宝方面透露，最近一段时间平均每天都有十几万人新开通收钱码做生意。与此同时，阿里新批发平台1688上，运货手推车最近一周销量猛增</p>
+                        </a>
+                    </div>
+                    <ul class="infor-list">
+                        <li><i></i><a href="#">圣托里尼：永恒的蓝白世界</a><span>2020-06-07</span></li>
+                        <li><i></i><a href="#">哥本哈根：走进安徒生的童话世界</a><span>2020-05-23</span></li>
+                        <li><i></i><a href="#">圣彼得堡：风光迤逦的北方威尼斯</a><span>2020-04-13</span></li>
+                        <li><i></i><a href="#">咖啡馆里，我用了二十分钟十八秒决定了这场德国之旅</a><span>2020-03-15</span></li>
+                        <li><i></i><a href="#">清迈：文艺清新的泰北明珠</a><span>2020-02-22</span></li>
+                        <li><i></i><a href="#">柏林：啤酒相约猪肘，许我一个秋日童话</a><span>2020-02-13</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="jm-footer">
+    <div class="about-layout">
+        <ul class="fl">
+            <li class="fl">
+                <ol>
+                    <li><strong>关于本站</strong></li>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">法律声明</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">工作机会</a></li>
+                </ol>
+            </li>
+            <li class="fl">
+                <ol>
+                    <li><strong>快速通道</strong></li>
+                    <li><a href="#">投诉举报</a></li>
+                    <li><a href="#">旅游动态</a></li>
+                    <li><a href="#">积分集市</a></li>
+                    <li><a href="#">
+                        <font color="red">代理申请</font>
+                    </a></li>
+                </ol>
+            </li>
+            <li class="fl">
+                <ol>
+                    <li><a href="#"><strong>帮助中心</strong></a></li>
+                    <li><a href="#">网站地图</a></li>
+                    <li><a href="#">新手教程</a></li>
+                    <li><a href="#">签证申请</a></li>
+                    <li><a href="#">全球经纪</a></li>
+                </ol>
+            </li>
+            <li class="fl">
+                <ol>
+                    <li><strong>服务与支持</strong></li>
+                    <li><a>咨询：zx@qq.com</a></li>
+                    <li><a>合作：hz@qq.com</a></li>
+                    <li><a>投诉：ts@qq.com</a></li>
+                </ol>
+            </li>
+        </ul>
+        <div class="about-right">
+            <img class="fl" src="images/wx_bg.png" alt="关注微信" title="关注微信">
+            <div class="contact-qq fl">
+                <a href="#"></a>
+                <span>09:00 - 21:00</span>
+            </div>
+            <div class="about-rx">
+                <p class="kfrx">客户服务热线：</p>
+                <p class="kfdh">400-027-9876</p>
+                <p>周一至周五：09:00 - 17:00</p>
+            </div>
+        </div>
+        <button id="back-to-top" onclick="backToTop()">TOP</button>
+        <div class="jm-copyright">
+            <p>Copyright © 2020-2021 武汉旅游信息网 版权所有</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var userId = document.getElementById("inputId");
+    var userPass = document.getElementById("inputPass");
+    var number_0 = 3389;
+    var numbers_0 = document.getElementById("numbers0");
+    var number_1 = 8848;
+    var numbers_1 = document.getElementById("numbers1");
+    var backBtn= document.getElementById("back-to-top");
+
+    function login() {
+        if (userId.value === "" || userPass.value === "") {
+            alert("请输入用户名/密码！");
+        }
+    }
+
+    numbers_0.innerHTML = number_0;
+    numbers_1.innerHTML = number_1;
+    var timeId = setInterval(function () {
+        number_0 += parseInt(Math.random() * 10);
+        number_1 += parseInt(Math.random() * 50);
+        numbers_0.innerHTML = number_0;
+        numbers_1.innerHTML = number_1;
+    }, 3000);
+
+    window.onscroll = function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backBtn.style.display = "block";
+        } else {
+            backBtn.style.display = "none";
+        }
+    };
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+</body>
+</html>
